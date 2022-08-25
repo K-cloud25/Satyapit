@@ -7,6 +7,7 @@ export default function MainPage(props){
 
     return(
         <>
+        
         </>
     )
 }
