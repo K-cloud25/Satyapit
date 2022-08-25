@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import Table from "../Table_Component/Table";
+import Loader from "../Loader/Loader";
 
 
 export default function MainPage(props){
@@ -15,9 +16,8 @@ export default function MainPage(props){
             const response = await fetch('apiEP/getAllNews')
             const data = await response.json()
             setData(data)
-            console.log(data)
+            //console.log(data)
         }
-
             runer()
     },[])
 
@@ -42,7 +42,7 @@ export default function MainPage(props){
 
     return(
         <>
-            {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <></>}
+            {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <Loader/>}
         </>
     )
 }
