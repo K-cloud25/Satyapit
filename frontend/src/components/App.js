@@ -13,6 +13,11 @@ function App () {
 
     return (
         <>
+<<<<<<< HEAD
+=======
+        <MainPage />
+        
+>>>>>>> e45c5f25bb0dfe1b74d69bc469f240f76690d1ec
         </>
     )
 

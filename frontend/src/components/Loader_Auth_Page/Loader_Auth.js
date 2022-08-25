@@ -27,7 +27,11 @@ export default function LoaderAuth (props){
 
     return(
         <>
+<<<<<<< HEAD
             {text}
+=======
+            <h1>Loading..</h1>
+>>>>>>> e45c5f25bb0dfe1b74d69bc469f240f76690d1ec
         </>
     )
 

@@ -8,7 +8,6 @@ export default function MainPage(props){
     const [sorted,setSorted] = useState()
     const [loading,setloading] = useState(false)
 
-
     /* Data Caller Runs on Page load */
     useEffect(()=>{
         const runer = async()=>{
@@ -18,9 +17,20 @@ export default function MainPage(props){
             setData(data)
             console.log(data)
         }
-        runer()
+
+            runer()
     },[])
 
+    const TableComponent=(e)=>{useEffect(() => {
+      if(typeof data  === 'undefined'){
+        onLoading(false)
+      }else{
+        setSorted(data)
+        onLoading(true)
+      }
+    },[data]);
+        navigate('/homepage/page',{ state : {'sorted' : sorted[e],'user' : location.state.user}})
+      }
 
     // Runs on data change 
     useEffect(()=>{
@@ -32,7 +42,7 @@ export default function MainPage(props){
 
     return(
         <>
-        
+            {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <></>}
         </>
     )
 }
