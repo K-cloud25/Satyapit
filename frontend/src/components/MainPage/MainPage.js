@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import Table from "../Table_Component/Table";
-
+import LoaderAuth from "../Loader_Auth_Page/Loader_Auth";
 
 export default function MainPage(props){
 
@@ -42,7 +42,7 @@ export default function MainPage(props){
 
     return(
         <>
-            {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <></>}
+            {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <LoaderAuth/>}
         </>
     )
 }
