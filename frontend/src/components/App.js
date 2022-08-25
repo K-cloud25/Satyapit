@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { createRoot } from 'react-dom/client';
 
+import LoginPage from './LoginPage/LoginPage';
+
 function App () {
 
     //React Router Head Route 
@@ -9,7 +11,6 @@ function App () {
 
     return (
         <>
-            <h1>Hello</h1>
         </>
     )
 
