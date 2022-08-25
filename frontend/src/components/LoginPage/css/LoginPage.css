@@ -61,3 +61,18 @@ html,body{
     text-align: center;
     font-size: larger;
 }
+
+.Submit_btn{
+    width: fit-content;
+    align-self: center;
+    border-radius: 15px;
+    border: none;
+    padding: 9px 16px;
+    background-color: #0D3590;
+    color: white;
+    transition: 150ms;
+}
+
+.Submit_btn:hover{
+    background-color: #103ea8;
+}

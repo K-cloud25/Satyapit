@@ -10,6 +10,13 @@ export default function LoginPage(props){
     const [userName,setUserName] = useState()
     const [userPasswrd,setPasswrd] = useState()
 
+
+    const onSubmitClick = () =>{
+        console.log(uid)
+        console.log(userName)
+        console.log(userPasswrd)
+    }
+
     return (
         <>
             <IconContext.Provider value={{className:'react-icons'}}>
@@ -32,6 +39,8 @@ export default function LoginPage(props){
                             <input type='text' className='formInput' id='userPasswrd' placeholder='Enter Password' onChange={(e)=>{setPasswrd(e.target.value)}}></input><br></br>
                         </div>
                     </form>
+
+                    <button className="Submit_btn" onClick={onSubmitClick} >Submit</button>
 
                 </div>
             </IconContext.Provider>
