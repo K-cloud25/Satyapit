@@ -25,19 +25,14 @@ html,body{
   }
   
   .logo{
-    
     display:inline-block;
-    background-color: #C4C4C4;
     position: relative;
     left: 1%;
     font-size: 15px;
-    padding: 8px 10px;
     border: none;
     width: 55px;
     height: 55px;
     margin: 0px 0px 0px 10px;
-    
-      
   }
   
   .menu{

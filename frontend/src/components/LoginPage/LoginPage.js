@@ -4,6 +4,7 @@ import * as BiIcons from 'react-icons/bi'
 import * as RiIcons from 'react-icons/ri'
 import { IconContext } from 'react-icons'
 import { useNavigate } from "react-router-dom";
+import Logo from '../images/Satyapit_Logo.png';
 
 export default function LoginPage(props){
 
@@ -87,32 +88,45 @@ export default function LoginPage(props){
     return (
         <>
             <IconContext.Provider value={{className:'react-icons'}}>
-                <div className="loginContainer">
-                    <p className="loginTitle">Login</p>
+                <div className="PageContainer">
+                    <div className="logoContainer">
+                    </div>   
 
-                    <form>
-                        <p className={in_id ? 'Warning_active' : 'WarningMessage'}>Invalid User ID</p>
-                        <div className={ in_id ? 'itemForm warning' : 'itemForm'}>
-                            <RiIcons.RiContactsFill/>
-                            <input type='number' className='formInput' id='userID' placeholder='Enter ID' onChange={(e)=>{setUid(e.target.value)}}></input><br></br>
+                    <div className="MainLoginContainer">
+
+                        <div className="loginContainer">
+
+                            <img src={Logo}  id ="logo" className="logoLog"/>
+
+                            <p className="loginTitle">Login</p>
+
+                            <form>
+                                <p className={in_id ? 'Warning_active' : 'WarningMessage'}>Invalid User ID</p>
+                                <div className={ in_id ? 'itemForm warning' : 'itemForm'}>
+                                    <RiIcons.RiContactsFill/>
+                                    <input type='number' className='formInput' id='userID' placeholder='Enter ID' onChange={(e)=>{setUid(e.target.value)}}></input><br></br>
+                                </div>
+
+                                <p className={in_name ? 'Warning_active' : 'WarningMessage'}>Invalid User Name</p>
+                                <div className={ in_name ? 'itemForm warning' : 'itemForm'}>
+                                    <BiIcons.BiUserCircle/>
+                                    <input type='text' className='formInput' id='userName' placeholder='Enter Username' onChange={(e)=>{setUserName(e.target.value)}}></input><br></br>
+                                </div>
+
+                                <p className={in_Passwrd ? 'Warning_active' : 'WarningMessage'}>Incorrect Password</p>
+                                <div className={ in_Passwrd ? 'itemForm warning' : 'itemForm'}>
+                                    <RiIcons.RiFingerprint2Line/>
+                                    <input type='text' className='formInput' id='userPasswrd' placeholder='Enter Password' onChange={(e)=>{setPasswrd(e.target.value)}}></input><br></br>
+                                </div>
+                            </form>
+
+                            <button className="Submit_btn" onClick={onSubmitClick} >Submit</button>
+
                         </div>
+                    </div>
 
-                        <p className={in_name ? 'Warning_active' : 'WarningMessage'}>Invalid User Name</p>
-                        <div className={ in_name ? 'itemForm warning' : 'itemForm'}>
-                            <BiIcons.BiUserCircle/>
-                            <input type='text' className='formInput' id='userName' placeholder='Enter Username' onChange={(e)=>{setUserName(e.target.value)}}></input><br></br>
-                        </div>
+                </div>    
 
-                        <p className={in_Passwrd ? 'Warning_active' : 'WarningMessage'}>Incorrect Password</p>
-                        <div className={ in_Passwrd ? 'itemForm warning' : 'itemForm'}>
-                            <RiIcons.RiFingerprint2Line/>
-                            <input type='text' className='formInput' id='userPasswrd' placeholder='Enter Password' onChange={(e)=>{setPasswrd(e.target.value)}}></input><br></br>
-                        </div>
-                    </form>
-
-                    <button className="Submit_btn" onClick={onSubmitClick} >Submit</button>
-
-                </div>
             </IconContext.Provider>
         </>
     )

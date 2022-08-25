@@ -17,6 +17,7 @@ function App () {
             <Router>
                 <Routes>
                     <Route exact path ='/' element={<LoginPage />} />
+                    <Route path='/login' element={<LoginPage />} />
                     <Route path='mainpage/' >
                         <Route index={true} element={<MainPage />} /> 
                         <Route path='mainPage' element={<MainPage />} />

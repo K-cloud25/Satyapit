@@ -13,7 +13,11 @@ export default function Table(props){
 
 const onRowClick = (e) =>{
     props.TableComponent(e.target.id)
-  }
+}
+
+const converPr = (e) =>{
+    return((e*100).toFixed(4))
+}
   
 const TableRow = ({item,index}) => (
 
@@ -23,7 +27,7 @@ const TableRow = ({item,index}) => (
       <td id={index} >{titleCheck(item.title)}</td>
       <td id={index} >{item.date}</td>
       <td id={index} >{item.src}</td>
-      <td id={index} >{item.pr_per_cent}</td>
+      <td id={index} >{converPr(item.pr_per_cent)}%</td>
     </tr>
 )
 

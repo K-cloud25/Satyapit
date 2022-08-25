@@ -103,3 +103,9 @@ html,body{
     border-color: red;
     color: red;
 }
+
+.logoLog{
+    height: 40%;
+    width: 40%;
+    align-self: center;
+}

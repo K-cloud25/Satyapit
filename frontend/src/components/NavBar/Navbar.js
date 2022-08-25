@@ -14,7 +14,7 @@ export default function Navbar() {
         
       <nav className="navigation">
       <img src={Logo}  id ="logo" className="logo"/>
-      <button className="menu" onClick={()=>{navigate('login/')}}> Logout</button>
+      <button className="menu" onClick={()=>{navigate('/login/')}}> Logout</button>
       </nav> 
     </div>
     )
