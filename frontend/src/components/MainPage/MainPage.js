@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from "react";
 import Table from "../Table_Component/Table";
+import Loader from "../Loader/Loader";
 import LoaderAuth from "../Loader_Auth_Page/Loader_Auth";
 import Tabs from "../Tabs_Component/Tabs";
 
@@ -16,9 +17,8 @@ export default function MainPage(props){
             const response = await fetch('apiEP/getAllNews')
             const data = await response.json()
             setData(data)
-            console.log(data)
+            //console.log(data)
         }
-
             runer()
     },[])
 
