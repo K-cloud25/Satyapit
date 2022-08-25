@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { createRoot } from 'react-dom/client';
-import Table from './Table_Component/Table';
 import { BrowserRouter as Router, Route, Link,Redirect, useLocation, Routes } from 'react-router-dom';
 import LoginPage from './LoginPage/LoginPage';
 import MainPage from './MainPage/MainPage';
@@ -13,7 +12,7 @@ function App () {
 
     return (
         <>
-        <MainPage />
+        <LoginPage />
         </>
     )
 
