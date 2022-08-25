@@ -3,6 +3,8 @@ import { createRoot } from 'react-dom/client';
 import Table from './Table_Component/Table';
 import { BrowserRouter as Router, Route, Link,Redirect, useLocation, Routes } from 'react-router-dom';
 
+import LoginPage from './LoginPage/LoginPage';
+
 function App () {
 
     //React Router Head Route 
