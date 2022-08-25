@@ -1,11 +1,7 @@
 import React,{useState,useEffect} from "react";
 import Table from "../Table_Component/Table";
-<<<<<<< HEAD
 import Loader from "../Loader/Loader";
-
-=======
 import LoaderAuth from "../Loader_Auth_Page/Loader_Auth";
->>>>>>> 4e404de7446f9f9ce7c97dc9139ff2b001e90e42
 
 export default function MainPage(props){
 
@@ -46,11 +42,7 @@ export default function MainPage(props){
 
     return(
         <>
-<<<<<<< HEAD
-            {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <Loader/>}
-=======
             {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <LoaderAuth/>}
->>>>>>> 4e404de7446f9f9ce7c97dc9139ff2b001e90e42
         </>
     )
 }
