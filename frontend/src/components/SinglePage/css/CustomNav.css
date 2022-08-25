@@ -1,0 +1,53 @@
+.navbar{
+    width: 100%;
+    background-color: white;
+    position: absolute;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.optionsTab{
+    display: flex;
+    flex-direction: row;
+    margin-right: 20px;
+    align-content: space-evenly;
+    right: 10px;
+    position: absolute;
+}
+
+.option{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: small;
+    margin: 5px;
+    transition: 20ms;
+}
+
+.reactIcon{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.flag{
+    color:red;
+}
+
+.dismiss{
+    color: greenyellow;
+}
+
+.visit{
+    color: black;
+}
+
+.options-Text{
+    font-size: larger;
+}
+
+.option:hover{
+    background-color: #d9d9d9b9;
+}

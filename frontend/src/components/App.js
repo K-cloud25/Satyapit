@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter as Router, Route, Link,Redirect, useLocation, Routes } from 'react-router-dom';
 import LoginPage from './LoginPage/LoginPage';
 import MainPage from './MainPage/MainPage';
+import SinglePage from './SinglePage/SinglePage';
 
 function App () {
 
@@ -12,7 +13,6 @@ function App () {
 
     return (
         <>
-        <LoginPage />
         </>
     )
 

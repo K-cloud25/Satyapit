@@ -1,0 +1,52 @@
+.Window_{
+    width: 100%;
+    height: 100%;
+    border: none;
+    position: absolute;
+}
+
+.windows{
+    background-color: whitesmoke;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+}
+
+.splitBtn{
+    padding: 1px;
+    margin: 0;
+    width: 100%;
+    border: none;
+    background-color: #95bbff;
+    color: black;
+    transition: 200ms;
+}
+
+.splitBtn:hover{
+    background-color: #0b3377;
+    color: aliceblue;
+    transition: 20ms;
+}
+
+.splitfull{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: width 2s;
+}
+
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    transition: width 2s;
+}
+
+.right{right: 0;}
+ 
+.left{left: 0;}
+
+.lefthide{left: 100%;}

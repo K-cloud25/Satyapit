@@ -1,0 +1,21 @@
+.pageContainer{
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: black;
+}
+
+.navContainer{
+    height: 12%;
+    width: 100%;
+    background-color: black;
+    position: absolute;
+}
+
+.splitContainer{
+    height: 88%;
+    width: 100%;
+    position: absolute;
+    background-color: aqua;
+    bottom: 0;
+}
