@@ -8,12 +8,11 @@ export default function Tabs(props){
 
     //Runs whenever index value changes
     useEffect(()=>{
-        console.log(index)
+        props.pFilter(index)
     },[index])
 
-    useEffect(()=>{console.log(subIndex)},[subIndex])
-
     const te = (e)=>{
+        props.sFilter(e)
         setsub(e)
     }
 

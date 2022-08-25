@@ -3,7 +3,7 @@ import './css/LoginPage.css'
 import * as BiIcons from 'react-icons/bi'
 import * as RiIcons from 'react-icons/ri'
 import { IconContext } from 'react-icons'
-import { useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function LoginPage(props){
 
@@ -17,7 +17,7 @@ export default function LoginPage(props){
 
     const [user,setUser] = useState()
 
-
+    const navigate = useNavigate()
 
     const unInput =(e) =>{
         if(in_name===true){
@@ -41,21 +41,11 @@ export default function LoginPage(props){
         setPasswrd(e.target.value)
     }
 
-    const userVerify = async (e) => {
-
-        if(uid == -1){
-            setInID(!inID)
-        }else{
-            await    sub('1')
-        }
-    }
-
     const sub = async(e) =>{
-        const response = await fetch('/api/getUser?id='+uid);
+        const response = await fetch('/apiEP/getUser?id='+uid);
         if (response.status >= 200 && response.status <= 299) {
-        const data = await response.json();
-        await setUser(data)
-
+            const data = await response.json();
+            await setUser(data)
         }
         else{
             setInID(!inID);
@@ -71,21 +61,27 @@ export default function LoginPage(props){
     const userCheck = async () =>{
         if(userName === user.username){
             if(userPasswrd === user.passwrd){
-                console.log(correct_credentials)
+                navigate('mainpage/')
             }else{
                 setInPasswrd(!in_Passwrd)
-                console.log(incoreect_password)
             }
         }else{
             setInName(!in_name)
-            console.log(incorrect_credentials)
+            navigate('mainpage/')
+        }
+    }
+
+    const userVerify = async (e) => {
+        console.log("clicked")
+        if(uid === -1){
+            setInID(!in_id)
+        }else{
+            await sub('1')
         }
     }
 
     const onSubmitClick = () =>{
-        console.log(uid)
-        console.log(userName)
-        console.log(userPasswrd)
+        userVerify()
     }
 
     return (
@@ -95,17 +91,20 @@ export default function LoginPage(props){
                     <p className="loginTitle">Login</p>
 
                     <form>
-                        <div className="itemForm">
+                        <p className={in_id ? 'Warning_active' : 'WarningMessage'}>Invalid User ID</p>
+                        <div className={ in_id ? 'itemForm warning' : 'itemForm'}>
                             <RiIcons.RiContactsFill/>
                             <input type='number' className='formInput' id='userID' placeholder='Enter ID' onChange={(e)=>{setUid(e.target.value)}}></input><br></br>
                         </div>
 
-                        <div className="itemForm">
+                        <p className={in_name ? 'Warning_active' : 'WarningMessage'}>Invalid User Name</p>
+                        <div className={ in_name ? 'itemForm warning' : 'itemForm'}>
                             <BiIcons.BiUserCircle/>
                             <input type='text' className='formInput' id='userName' placeholder='Enter Username' onChange={(e)=>{setUserName(e.target.value)}}></input><br></br>
                         </div>
 
-                        <div className="itemForm">
+                        <p className={in_Passwrd ? 'Warning_active' : 'WarningMessage'}>Incorrect Password</p>
+                        <div className={ in_Passwrd ? 'itemForm warning' : 'itemForm'}>
                             <RiIcons.RiFingerprint2Line/>
                             <input type='text' className='formInput' id='userPasswrd' placeholder='Enter Password' onChange={(e)=>{setPasswrd(e.target.value)}}></input><br></br>
                         </div>

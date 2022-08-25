@@ -25,7 +25,7 @@ class UserVerif(APIView):
             users = User.objects.filter(id=userID)
             if(len(users)>0):
                 user = UserSerializer(users[0]).data
-                return Response(users,status=status.HTTP_200_OK)
+                return Response(user,status=status.HTTP_200_OK)
             return Response({'Valid Param Missing':'User Entry not found'},status=status.HTTP_404_NOT_FOUND)
         return Response({'Bad Request':'ID param not found'},status=status.HTTP_400_BAD_REQUEST)
 

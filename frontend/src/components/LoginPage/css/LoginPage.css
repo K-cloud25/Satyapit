@@ -76,3 +76,30 @@ html,body{
 .Submit_btn:hover{
     background-color: #103ea8;
 }
+
+.WarningMessage{
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: red;
+    margin-left: 10px;
+    font-size: xx-small;
+    opacity: 0;
+}
+
+.Warning_active{
+    padding: 0;
+    margin: 0;
+    text-align: left;
+    color: red;
+    margin-left: 10px;
+    font-size: xx-small;
+    opacity: 1;
+}
+
+.warning{
+    border: solid;
+    border-width: thin;
+    border-color: red;
+    color: red;
+}

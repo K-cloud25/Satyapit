@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link,Redirect, useLocation, Routes } fr
 import LoginPage from './LoginPage/LoginPage';
 import MainPage from './MainPage/MainPage';
 import SinglePage from './SinglePage/SinglePage';
+import Loader from './Loader/Loader';
 
 function App () {
 
@@ -13,7 +14,17 @@ function App () {
 
     return (
         <>
-        </>
+            <Router>
+                <Routes>
+                    <Route exact path ='/' element={<LoginPage />} />
+                    <Route path='mainpage/' >
+                        <Route index={true} element={<MainPage />} /> 
+                        <Route path='mainPage' element={<MainPage />} />
+                        <Route path='page' element={<SinglePage />} />
+                        <Route path='*' element={<Loader />} />
+                    </Route>
+                </Routes>
+            </Router>
         </>
     )
 

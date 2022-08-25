@@ -1,0 +1,52 @@
+html,body{
+    padding: 0px;
+    margin: 0px;
+  }
+  .navigation{
+      height: 50 px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 0.5rem 0rem;
+      background-color: #3F62B2;
+      color: black;
+      box-shadow: 0 2px 2px 2px rgba(9, 9, 9, 0.23);
+  }
+  
+  .search{
+    background-color:   #3F62B2;
+    border: none;
+    position: relative;
+    left: 5%;
+    font-size:15px;
+    color: white;
+  
+  }
+  
+  .logo{
+    
+    display:inline-block;
+    background-color: #C4C4C4;
+    position: relative;
+    left: 1%;
+    font-size: 15px;
+    padding: 8px 10px;
+    border: none;
+    width: 55px;
+    height: 55px;
+    margin: 0px 0px 0px 10px;
+    
+      
+  }
+  
+  .menu{
+  
+    background-color: #3F62B2;
+    border: none;
+    position:absolute;
+    right: 1%; 
+    color: white;
+    font-size:15px;
+  
+  }
