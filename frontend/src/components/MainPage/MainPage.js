@@ -1,6 +1,5 @@
 import React,{useState,useEffect} from "react";
 import Table from "../Table_Component/Table";
-import { useLocation,useNavigate } from "react-router-dom";
 
 
 export default function MainPage(props){
@@ -8,9 +7,6 @@ export default function MainPage(props){
     const [data,setData] = useState()
     const [sorted,setSorted] = useState()
     const [loading,setloading] = useState(false)
-
-    const location = useLocation()
-    const navigate = useNavigation()
 
     /* Data Caller Runs on Page load */
     useEffect(()=>{
@@ -21,15 +17,18 @@ export default function MainPage(props){
             setData(data)
             console.log(data)
         }
-        if(location.state.user=== null){
-            navigate('homepage/buffer')
-        }
-        else
+
             runer()
     },[])
 
-    const TableComponent=(e)=>{
-        //console.log(sorted[e])
+    const TableComponent=(e)=>{useEffect(() => {
+      if(typeof data  === 'undefined'){
+        onLoading(false)
+      }else{
+        setSorted(data)
+        onLoading(true)
+      }
+    },[data]);
         navigate('/homepage/page',{ state : {'sorted' : sorted[e],'user' : location.state.user}})
       }
 
@@ -43,7 +42,7 @@ export default function MainPage(props){
 
     return(
         <>
-            {load ? <Table data={sorted} TableComponent={TableComponent}/> : <Loader />}
+            {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <></>}
         </>
     )
 }

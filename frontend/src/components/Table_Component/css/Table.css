@@ -1,8 +1,12 @@
+html{
+    background-color: #f7f5f5;
+}
 table {
     border-collapse: collapse;
     max-width: 100%;
     width: 100%;
     overflow-y: scroll;
+    background-color: #f7f5f5;
   }
   table th, table td {
     border-bottom: 1px solid #ddd;
@@ -10,7 +14,7 @@ table {
     text-align: center;
   }
   
-  table tr:hover{background-color: #f7f5f5}
+  table tr:hover{background-color: #ddd}
   
   table thead,th{
     background-color: #f7f5f5;

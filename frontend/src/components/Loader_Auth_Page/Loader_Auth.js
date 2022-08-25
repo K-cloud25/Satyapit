@@ -4,7 +4,7 @@ export default function LoaderAuth (props){
 
     return(
         <>
-            <h1>GELLO</h1>
+            <h1>Loading..</h1>
         </>
     )
 
