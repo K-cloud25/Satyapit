@@ -1,14 +1,15 @@
 import React from 'react';
-import './Table.css';
+import './css/Table.css';
 
 export default function Table(props){
-    if(string.length >= 150){
-        return string.slice(0,100) + "..."    
-      }else{
-        return string 
-      }
 
-
+    const titleCheck = (string) =>{
+        if(string.length >= 150){
+            return string.slice(0,100) + "..."    
+          }else{
+            return string 
+        }
+    }
 
 const onRowClick = (e) =>{
     props.TableComponent(e.target.id)

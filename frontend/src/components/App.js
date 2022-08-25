@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { createRoot } from 'react-dom/client';
+import Table from './Table_Component/Table';
+import { BrowserRouter as Router, Route, Link,Redirect, useLocation, Routes } from 'react-router-dom';
 
 function App () {
 
@@ -9,7 +11,6 @@ function App () {
 
     return (
         <>
-            <h1>Hello</h1>
         </>
     )
 
