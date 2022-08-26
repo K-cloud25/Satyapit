@@ -5,7 +5,7 @@ import './css/Setup.css'
 
 export default function SplitPage(props){
 
-    const [split,setSplit] = useState(false)
+    const [split,setSplit] = useState(true)
 
     const [jdata,getJdata] = useState()
 

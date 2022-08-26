@@ -37,6 +37,7 @@ class getFnews(APIView):
         newsArr = []
 
         tdate = date.today()
+        tday = date.today()
 
         news = Fnews.objects.filter(date=tdate)
         if(len(news)<15):
