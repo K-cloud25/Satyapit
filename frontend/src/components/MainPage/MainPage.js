@@ -42,6 +42,19 @@ export default function MainPage(props){
     },[data])
 
 
+    const refresh = () =>{
+        const runer = async()=>{
+
+            const response = await fetch('/apiEP/getAllNews/')
+            const data = await response.json()
+            setData(data)
+        }
+        
+        setFilter(0)
+        runer()
+    }
+
+
     const optFilter = (e) =>{setFilter(e)}
     const optSubFilter = (e) =>{setSubFilter(e)}
 
