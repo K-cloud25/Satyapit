@@ -11,7 +11,7 @@ class UserSerializer(serializers.ModelSerializer):
 class FnewsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fnews
-        fields=['id','title','pr_id','pr_per_cent','url','date','src','flags']
+        fields=['id','title','pr_id','pr_per_cent','url','date','src','flags','sus_fac']
 
 class PrelSerializer(serializers.ModelSerializer):
     class Meta:

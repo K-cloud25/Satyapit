@@ -16,6 +16,7 @@ class Fnews(models.Model):
     date  = models.DateField()
     src = models.CharField(max_length=40,null=False,default="Internet")
     flags = models.IntegerField(null=False,default=0)
+    sus_fac = models.IntegerField(null=False)
 
 class Prel(models.Model):
     pr_id = models.IntegerField(null=False,primary_key=True)
