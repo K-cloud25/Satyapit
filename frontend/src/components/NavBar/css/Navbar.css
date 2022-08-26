@@ -45,3 +45,18 @@ html,body{
     font-size:15px;
   
   }
+
+  .button{
+    position:absolute;
+    right: 8%; 
+    background-color: #3F62B2;
+    padding: 0.7rem 1rem;
+    border: none;
+  }
+
+
+.refresh{
+  position: relative;
+  right: -85%;
+  color: white;
+}
