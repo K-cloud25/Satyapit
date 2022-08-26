@@ -21,9 +21,9 @@ const converPr = (e) =>{
 
 const checkSus =(e) =>{
     if(e!=0){
-        return("True")
+        return("1")
     }else{
-        return("False")
+        return("0")
     }
 }
   
