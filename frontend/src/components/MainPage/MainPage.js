@@ -22,7 +22,6 @@ export default function MainPage(props){
             const response = await fetch('/apiEP/getAllNews/')
             const data = await response.json()
             setData(data)
-            //console.log(data)
         }
         
         runer()
@@ -44,6 +43,7 @@ export default function MainPage(props){
 
 
     const refresh = () =>{
+        setloading(false)
         const runer = async()=>{
 
             const response = await fetch('/apiEP/getAllNews/')
@@ -106,7 +106,7 @@ export default function MainPage(props){
 
     return(
         <>
-            <Navbar />
+            <Navbar  onRefresh={refresh}/>
             <Tabs pFilter={optFilter} sFilter={optSubFilter} ssFilter={optSubFilter2} />
             {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <LoaderAuth/>}
         </>
