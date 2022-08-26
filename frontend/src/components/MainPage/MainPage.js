@@ -13,6 +13,7 @@ export default function MainPage(props){
 
     const [filterOpt,setFilter] = useState(0)
     const [subFilter,setSubFilter] = useState(4)
+    const [subFilter2,setSubFilter2] = useState(4)
 
     /* Data Caller Runs on Page load */
     useEffect(()=>{
@@ -57,14 +58,21 @@ export default function MainPage(props){
 
     const optFilter = (e) =>{setFilter(e)}
     const optSubFilter = (e) =>{setSubFilter(e)}
+    const optSubFilter2 = (e) =>{setSubFilter2(e)}
 
     useEffect(()=>{
+        console.log(filterOpt,subFilter,subFilter2)
         if(filterOpt===0){
             setSorted(data)
         }
         else if(filterOpt===1){
-            const temp = [...data].sort((a,b)=>{return b.pr_per_cent - a.pr_per_cent})
-            setSorted(temp)
+            if(subFilter2==4){
+                const temp = [...data].sort((a,b)=>{return b.pr_per_cent - a.pr_per_cent})
+                setSorted(temp)
+            }else if(subFilter2==5){
+                const temp = [...data].sort((a,b)=>{return a.pr_per_cent - b.pr_per_cent})
+                setSorted(temp)
+            }
         }else if(filterOpt===2){
             if(subFilter===4){
                 const temp = [...data].filter((a)=>{if(a.src === "Reddit"){return true} return false})
@@ -76,13 +84,16 @@ export default function MainPage(props){
             }else if(subFilter===6){
                 const temp = [...data].filter((a)=>{if(a.src === "Google"){return true} return false})
                 setSorted(temp)
+            }else if(subFilter===7){
+                const temp = [...data].filter((a)=>{if(a.src==='Youtube'){return true} return false})
+                setSorted(temp)
             }
             
         }
         else if(filterOpt==3){
             flagFilter()
         }
-    },[filterOpt,subFilter])
+    },[filterOpt,subFilter,subFilter2])
 
 
     //Sorting/Filtering Funtions
@@ -96,7 +107,7 @@ export default function MainPage(props){
     return(
         <>
             <Navbar />
-            <Tabs pFilter={optFilter} sFilter={optSubFilter}/>
+            <Tabs pFilter={optFilter} sFilter={optSubFilter} ssFilter={optSubFilter2} />
             {loading ? <Table data={sorted} TableComponent={TableComponent}/> : <LoaderAuth/>}
         </>
     )

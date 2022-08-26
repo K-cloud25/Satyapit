@@ -5,7 +5,7 @@ export default function Tabs(props){
 
     const [index,setIndex] = useState(0)    //Keep track of selected tab in child
     const [subIndex,setsub] = useState(4)          
-    const [subIndex2, setsub2] = useState(0)
+    const [subIndex2, setsub2] = useState(4)
 
     //Runs whenever index value changes
     useEffect(()=>{
@@ -17,6 +17,11 @@ export default function Tabs(props){
         setsub(e)
     }
 
+    const te2 = (e)=>{
+        props.ssFilter(e)
+        setsub2(e)
+    }
+
     return(
         <>
            <div className='Container'>
@@ -26,17 +31,17 @@ export default function Tabs(props){
                 <div className={index !== 1 ? "header" : "headerSel"} onClick={()=>{setIndex(1)}}>
                     Press Release Match
                     {
-                        index ===1 || index===0 || index===1 ?
+                        index ===1  ?
                         <div className='subList'>
-                            <div className={subIndex2 === 4 ?'listItemSel' : 'listItem'} onClick={()=>{te(4)}}>Increasing</div>
-                            <div className={subIndex2 === 5 ?'listItemSel' : 'listItem'} onClick={()=>{te(5)}}>Decreasing</div>
+                            <div className={subIndex2 === 4 ?'listItemSel' : 'listItem'} onClick={()=>{te2(4)}}>High to Low</div>
+                            <div className={subIndex2 === 5 ?'listItemSel' : 'listItem'} onClick={()=>{te2(5)}}>Low to High</div>
                         </div> : <></>
                     }
                 </div>
                 <div className={index !== 2 ? "header" : "headerSel"} onClick={()=>{setIndex(2)}}>
                     Source
                     {
-                        index ===2 || index===4 || index===5 || index===6 ? 
+                        index ===2 ? 
                         <div className='subList'>
                             <div className={subIndex === 4 ?'listItemSel' : 'listItem'} onClick={()=>{te(4)}}>Reddit</div>
                             <div className={subIndex === 5 ?'listItemSel' : 'listItem'} onClick={()=>{te(5)}}>Twitter</div>
