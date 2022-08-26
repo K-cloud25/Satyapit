@@ -38,10 +38,6 @@ class getFnews(APIView):
 
         tdate = date.today()
         tday = date.today()
-<<<<<<< HEAD
-        
-=======
->>>>>>> 73f288ba7c1f3caf2cbd1ab9a5592bfa38634e83
         news = Fnews.objects.filter(date=tdate)
         if(len(news) < 15):
             tday = tday - timedelta(days=1)
